@@ -1,0 +1,88 @@
+{
+	"name": "octolize/shipping-cost-on-product-page",
+	"authors": [
+		{
+			"name": "Sebastian Pisula",
+			"email": "sebastian.pisula@octolize.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Octolize\\Shipping\\CostOnProductPage\\": "src"
+		},
+		"classmap": [
+			"vendor_prefixed"
+		]
+	},
+	"autoload-dev": {
+	},
+	"config": {
+		"autoloader-suffix": "OctolizeShippingCostOnProductPage",
+		"sort-packages": true,
+		"platform": {
+			"php": "7.4"
+		},
+		"gitlab-domains": [
+			"gitlab.wpdesk.dev"
+		],
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"cweagans/composer-patches": true,
+			"wpdesk/wp-codeception": true,
+			"wpdesk/wp-wpdesk-composer": true,
+			"kylekatarnls/update-helper": true
+		}
+	},
+	"prefer-stable": true,
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=7.4",
+		"wpdesk/wp-wpdesk-helper-override": "^1.1.0"
+	},
+	"require-dev": {
+		"10up/wp_mock": "*",
+		"octolize/wp-shipping-cost-on-product-page": "^1.6.0",
+		"octolize/wp-shipping-extensions": "^1.5",
+		"phpunit/phpunit": "^7||^8||^9",
+		"roave/security-advisories": "dev-latest",
+		"wpdesk/wp-codeception": "^2.7.4",
+		"wpdesk/wp-plugin-flow-free": "^1.0.2",
+		"wpdesk/wp-wpdesk-composer": "^3",
+		"wpdesk/wp-wpdesk-rating-petition": "^1.3.0"
+	},
+	"extra": {
+		"text-domain": "octolize-shipping-cost-on-product-page",
+		"translations-folder": "lang",
+		"translation-file-headers": {
+			"Project-Id-Version": "Octolize Shipping Cost on Product Page",
+			"Last-Translator": "Sebastian Pisula <sebastian.pisula@octolize.com>",
+			"X-Poedit-WPHeader": "octolize-shipping-cost-on-product-page.php"
+		},
+		"po-files": {
+			"pl_PL": "pl_PL.po",
+			"fr_FR": "fr_FR.po",
+			"de_DE": "de_DE.po"
+		},
+		"php-requires": "7.4",
+		"prefix_psr": true
+	},
+	"scripts": {
+		"test": "echo composer is alive",
+		"phpcs": "phpcs",
+		"phpcbf": "phpcbf src",
+		"phpunit-unit": "phpunit --configuration phpunit-unit.xml --coverage-text --colors=never",
+		"phpunit-unit-coverage": "phpunit --configuration phpunit-unit.xml --coverage-html build-coverage",
+		"phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
+		"docs": "apigen generate"
+	},
+	"repositories": {
+		"octolize": {
+			"type": "composer",
+			"url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+		},
+		"wpdesk": {
+			"type": "composer",
+			"url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+		}
+	}
+}
